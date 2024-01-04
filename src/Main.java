@@ -4,11 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt(), d = scanner.nextInt();
+        int altura1 = scanner.nextInt();
+        int altura2 = scanner.nextInt();
+        int altura3 = scanner.nextInt();
 
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
-        System.out.println(d);
+        boolean ordemDecrescente = altura1 >= altura2 && altura2 >= altura3;
+        boolean ordemCrescente = altura1 <= altura2 && altura2 <= altura3;
+
+        System.out.println(ordemDecrescente || ordemCrescente);
     }
 }
