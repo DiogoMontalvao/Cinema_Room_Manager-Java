@@ -11,24 +11,18 @@ public class Main {
             array[i] = scanner.nextInt();
         }
 
-        boolean ocorreProximo = false;
+        int valorMaximo = 0;
+        int indiceValorMaximo = 0;
 
-        int n = scanner.nextInt(), m = scanner.nextInt();
-        int atual, proximo, proximoIndice = 1;
-
-        for (int i = 0; i < tamanhoArray; i++) {
-            atual = array[i];
-            proximo = array[proximoIndice];
-
-            if (proximoIndice < tamanhoArray - 1) {
-                proximoIndice++;
-            }
-
-            if (atual == n && proximo == m || proximo == n && atual == m) {
-                ocorreProximo = true;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > valorMaximo && indiceValorMaximo != i) {
+                valorMaximo = array[i];
+                indiceValorMaximo = i;
             }
         }
 
-        System.out.println(ocorreProximo);
+        System.out.println(indiceValorMaximo);
+
+        scanner.close();
     }
 }
