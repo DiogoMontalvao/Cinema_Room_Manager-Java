@@ -4,15 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int min = scanner.nextInt(),
-            max = scanner.nextInt(),
-            n = scanner.nextInt();
+        int size = scanner.nextInt();
+        int larger = 0,
+            smaller = 0,
+            perfect = 0;
 
-        int total = 0;
-        for (int i = min; i <= max; i++) {
-            if (i % n == 0) total++;
+        for (int i = 0; i < size; i++) {
+            int n = scanner.nextInt();
+
+            if (n == 1) {
+                larger++;
+            } else if (n == -1) {
+                smaller++;
+            } else {
+                perfect++;
+            }
         }
 
-        System.out.println(total);
+        System.out.println(perfect + " " + larger + " " + smaller);
     }
 }
