@@ -4,23 +4,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int size = scanner.nextInt();
-        int larger = 0,
-            smaller = 0,
-            perfect = 0;
+        int minValue = scanner.nextInt();
+        int maxValue = scanner.nextInt();
 
-        for (int i = 0; i < size; i++) {
-            int n = scanner.nextInt();
+        for (int i = minValue; i <= maxValue; i++) {
+            String result = i % 3 == 0 && i % 5 == 0 ? "FizzBuzz" :
+                            i % 3 == 0 ? "Fizz" :
+                            i % 5 == 0 ? "Buzz" : String.valueOf(i);
 
-            if (n == 1) {
-                larger++;
-            } else if (n == -1) {
-                smaller++;
-            } else {
-                perfect++;
-            }
+            System.out.println(result);
         }
-
-        System.out.println(perfect + " " + larger + " " + smaller);
     }
 }
